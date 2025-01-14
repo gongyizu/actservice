@@ -5,8 +5,8 @@ class ElemeTest extends \PHPUnit\Framework\TestCase
     public function testStorePromotionQuery()
     {
         $client = new \Gongyizu\ActService\Eleme\Client();
-        $client->setAppkey('34579689');
-        $client->setSecret('2e5af836ad816af3d6cbd2dc99d0e9bd');
+        $client->setAppkey('');
+        $client->setSecret('');
 
         $req = new \Gongyizu\ActService\Eleme\Requests\StorePromotionQueryRequest();
         $req->setPid('alsc_22156869_10467004_25388161');
@@ -21,12 +21,12 @@ class ElemeTest extends \PHPUnit\Framework\TestCase
     public function testOfficialActivityGet()
     {
         $client = new \Gongyizu\ActService\Eleme\Client();
-        $client->setAppkey('34579689');
-        $client->setSecret('2e5af836ad816af3d6cbd2dc99d0e9bd');
+        $client->setAppkey('');
+        $client->setSecret('');
 
         $req = new \Gongyizu\ActService\Eleme\Requests\OfficialActivityGetRequest();
-        $req->setPid('alsc_22156869_10467004_25388161');
-        $req->setSid('elc23000234jlkjcasdf');
+        $req->setPid('');
+        $req->setSid('');
         $req->setActivityID("11862");
 
         $result = $client->execute($req);
@@ -36,11 +36,11 @@ class ElemeTest extends \PHPUnit\Framework\TestCase
     public function testKbcpxPositiveOrderGet()
     {
         $client = new \Gongyizu\ActService\Eleme\Client();
-        $client->setAppkey('34579689');
-        $client->setSecret('2e5af836ad816af3d6cbd2dc99d0e9bd');
+        $client->setAppkey('');
+        $client->setSecret('');
 
         $req = new \Gongyizu\ActService\Eleme\Requests\KbcpxPositiveOrderGetRequest();
-        $req->setPid('alsc_22156869_10467004_25388161');
+        $req->setPid('');
         $req->setDateType(1);
         $req->setBizUnit(2);
         $req->setPageSize(5);
@@ -55,8 +55,8 @@ class ElemeTest extends \PHPUnit\Framework\TestCase
     public function testMediaZoneAdd()
     {
         $client = new \Gongyizu\ActService\Eleme\Client();
-        $client->setAppkey('34579689');
-        $client->setSecret('2e5af836ad816af3d6cbd2dc99d0e9bd');
+        $client->setAppkey('');
+        $client->setSecret('');
 
         $req = new \Gongyizu\ActService\Eleme\Requests\MediaZoneAddRequest();
         // $req->setMediaID();
@@ -69,10 +69,9 @@ class ElemeTest extends \PHPUnit\Framework\TestCase
 
     public function testMediaZoneGet()
     {
-        // alsc_22156869_10467004_25861252
         $client = new \Gongyizu\ActService\Eleme\Client();
-        $client->setAppkey('34579689');
-        $client->setSecret('2e5af836ad816af3d6cbd2dc99d0e9bd');
+        $client->setAppkey('');
+        $client->setSecret('');
 
         $req = new \Gongyizu\ActService\Eleme\Requests\MediaZoneGetRequest();
         $req->setPage(1);

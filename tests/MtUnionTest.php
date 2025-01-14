@@ -5,8 +5,8 @@ class MtUnionTest extends \PHPUnit\Framework\TestCase
     public function testOrders()
     {
         $cli = new \Gongyizu\ActService\MtUnion\Client();
-        $cli->setAppkey('329de711c0486112d2939db0c73a55fc');
-        $cli->setSecret('cfdd309819c03f903c8870ee50894d13');
+        $cli->setAppkey('');
+        $cli->setSecret('');
 
         $req = new \Gongyizu\ActService\MtUnion\Requests\OrderListRequest();
         $req->setTs(time());
@@ -25,8 +25,8 @@ class MtUnionTest extends \PHPUnit\Framework\TestCase
     public function testSku()
     {
         $cli = new \Gongyizu\ActService\MtUnion\Client();
-        $cli->setAppkey('329de711c0486112d2939db0c73a55fc');
-        $cli->setSecret('cfdd309819c03f903c8870ee50894d13');
+        $cli->setAppkey('');
+        $cli->setSecret('');
 
         $req = new \Gongyizu\ActService\MtUnion\Requests\MtunionSkuRequest();
         $req->setTs(time());
@@ -46,8 +46,8 @@ class MtUnionTest extends \PHPUnit\Framework\TestCase
     public function testPoi()
     {
         $cli = new \Gongyizu\ActService\MtUnion\Client();
-        $cli->setAppkey('329de711c0486112d2939db0c73a55fc');
-        $cli->setSecret('cfdd309819c03f903c8870ee50894d13');
+        $cli->setAppkey('');
+        $cli->setSecret('');
 
         $req = new \Gongyizu\ActService\MtUnion\Requests\MtunionPoiRequest();
         $req->setTs(time());
@@ -67,8 +67,8 @@ class MtUnionTest extends \PHPUnit\Framework\TestCase
     public function testGenLink()
     {
         $cli = new \Gongyizu\ActService\MtUnion\Client();
-        $cli->setAppkey('329de711c0486112d2939db0c73a55fc');
-        $cli->setSecret('cfdd309819c03f903c8870ee50894d13');
+        $cli->setAppkey('');
+        $cli->setSecret('');
 
         $req = new \Gongyizu\ActService\MtUnion\Requests\GenerateLinkRequest();
         $req->setSid('mt6sz000000021786065040zn3wa8y');
