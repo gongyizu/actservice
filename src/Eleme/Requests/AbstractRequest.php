@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Gongyizu\ActService\Eleme\Requests;
 
+use Gongyizu\ActService\BaseUtil;
 use Gongyizu\ActService\Contract\RequestInterface;
+use Gongyizu\ActService\Exception\ResultErrorException;
 
 abstract class AbstractRequest implements RequestInterface
 {
@@ -17,7 +19,15 @@ abstract class AbstractRequest implements RequestInterface
 
     public function getResult($response)
     {
-        return [];
+        $result = BaseUtil::decode($response);
+
+        if (isset($result['error_response'])) {
+            $errorInfo = $result['error_response'];
+            $errMsg = ($errorInfo['msg'] ?? '') . ':' . ($errorInfo['sub_msg'] ?? '');
+            throw new ResultErrorException($errMsg, $errorInfo['code']);
+        }
+
+        return $result;
     }
 
     public function getApiMethodName()

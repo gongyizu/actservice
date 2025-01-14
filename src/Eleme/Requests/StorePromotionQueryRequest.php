@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Gongyizu\ActService\Eleme\Requests;
 
+use Gongyizu\ActService\BaseUtil;
+
 /**
  * doc: https://open.taobao.com/api.htm?docId=60448&docType=2&scopeId=24408.
  */
 class StorePromotionQueryRequest extends AbstractRequest
 {
-    private $apiParams = [];
+    private $apiParams = [
+        'method' => 'alibaba.alsc.union.eleme.promotion.storepromotion.query',
+    ];
 
     /**
      * 会话ID（分页场景首次请求结果返回，后续请求必须携带，服务根据session_id相同请求次数自动翻页返回）.
@@ -113,9 +117,16 @@ class StorePromotionQueryRequest extends AbstractRequest
      */
     private $includeDynamic;
 
-    public function getApiParams()
+    public function getApiParams(): array
     {
-        return $this->apiParams;
+        $params = $this->apiParams;
+        $method = $params['method'];
+        unset($params['method']);
+
+        return [
+            'method' => $method,
+            'query_request' => BaseUtil::encode($params),
+        ];
     }
 
     public function getSessionID(): string
